@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Innovators Inc</title>
+    <link rel="shortcut icon" href="./asset/img/logo.png" type="image/x-icon">
+    <style>
+        /* body { font-family: Arial, sans-serif; padding: 20px; } */
+        .feature { margin-bottom: 30px; }
+        canvas { border: 1px solid black; }
+    </style>
+   
+</head>
+<body>
+    <!-- main code will be here  -->
+       <!-- [header for our website ] -->
+        <header id="head">
+            <table width="100%" bgcolor="skyblue">
+                <tr>
+                    <td align="center"><img src="./asset/img/logo.png" alt="logo of tech Innovators " height="100px" width="100px"></td>
+                     <td align="center"> <h1> <b>Tech Innovators Inc</b></h1></td>
+                     <td align="center"><form action="" method="post">     <input type="search" name="" placeholder="Type here to search" id=""> <input type="submit"  name="" id="">
+                     </form></td>
+                </tr>
+            </table>
+        </header>
+        
+       <!-- [end for header of our website ] -->
+       <!-- o	Home
+       o	About
+       o	Contact
+       o	Registration
+       o	Features -->
+       
+         <hr>
+       <!-- [nav link item section ] -->
+          <nav>
+            <table width="100%" bgcolor="#1a7599">
+                <tr>
+                    <td ><a href="./index.html">
+                        <font color="white">Home</font></a></td>
+                    <td><a href="./abaut.html">
+                        <font color="white">Abaut</font></a></td>
+                    <td><a href="./contact.html">
+                        <font color="white">Contact</font></a></td>
+                    <td><a href="./registaration.html">
+                        <font color="white">Registration</font></a></td>
+                    <td><a href="">
+                        <font color="white">Features</font></a></td>
+                </tr>
+            </table>
+            
+                
+                
+                
+                
+                
+          
+          </nav>
+       <!-- [ end nav link item section ] -->
+       <hr>
+        <!-- [main contend container ] -->
+         <table>
+            <tr>
+                <td bgcolor="#2196c4">
+                    <aside >
+                        <h3> <u>Announcement</u> </h3>
+                        <font color="white">
+                        <marquee behavior="scroll" direction="up" scrollamount="3" onmousemove="this.stop()" onmouseleave="this.start()">
+                            <ol>
+                                <li> "New training program launched!", </li>
+                                <li> "Register now for exclusive workshops!" </li>
+                                <li> "New training program launched!", </li>
+                             </ol>  
+                        </marquee>
+                        </font>
+                      </aside>
+            
+                </td>
+                <td>
+                    <h1>Company Features</h1>
+
+                    <!-- Geolocation API -->
+                    <div class="feature">
+                        <h2>Geolocation</h2>
+                        <p>Your current location:</p>
+                        <p id="location">Fetching location...</p>
+                        <button onclick="getLocation()">Get Location</button>
+                    </div>
+                
+                    <!-- Web Storage API: To-Do List -->
+                    <div class="feature">
+                        <h2>To-Do List</h2>
+                        <input type="text" id="taskInput" placeholder="Add a new task">
+                        <button onclick="addTask()">Add Task</button>
+                        <ul id="taskList"></ul>
+                    </div>
+                
+                    <!-- Fetch API -->
+                    <div class="feature">
+                        <h2>Fetch API - User Data</h2>
+                        <button onclick="fetchUserData()">Fetch User Data</button>
+                        <div id="userData"></div>
+                    </div>
+                
+                    <!-- Canvas API -->
+                    <div class="feature">
+                        <h2>Canvas Drawing</h2>
+                        <canvas id="drawingCanvas" width="400" height="300"></canvas>
+                        <button onclick="clearCanvas()">Clear</button>
+                    </div>
+                
+                    <script>
+                        // Geolocation API
+                        function getLocation() {
+                            if (navigator.geolocation) {
+                                navigator.geolocation.getCurrentPosition(position => {
+                                    document.getElementById("location").textContent = `Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`;
+                                }, () => {
+                                    document.getElementById("location").textContent = "Unable to retrieve location.";
+                                });
+                            } else {
+                                document.getElementById("location").textContent = "Geolocation is not supported by this browser.";
+                            }
+                        }
+                
+                        // Web Storage API - To-Do List
+                        function loadTasks() {
+                            const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+                            const taskList = document.getElementById("taskList");
+                            taskList.innerHTML = "";
+                            tasks.forEach((task, index) => {
+                                const li = document.createElement("li");
+                                li.textContent = task;
+                                li.onclick = () => removeTask(index);
+                                taskList.appendChild(li);
+                            });
+                        }
+                
+                        function addTask() {
+                            const taskInput = document.getElementById("taskInput");
+                            if (taskInput.value.trim() !== "") {
+                                const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+                                tasks.push(taskInput.value);
+                                localStorage.setItem("tasks", JSON.stringify(tasks));
+                                taskInput.value = "";
+                                loadTasks();
+                            }
+                        }
+                
+                        function removeTask(index) {
+                            const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+                            tasks.splice(index, 1);
+                            localStorage.setItem("tasks", JSON.stringify(tasks));
+                            loadTasks();
+                        }
+                
+                        loadTasks();
+                
+                        // Fetch API - Get user data
+                        function fetchUserData() {
+                            fetch("https://jsonplaceholder.typicode.com/users/1")
+                                .then(response => response.json())
+                                .then(data => {
+                                    document.getElementById("userData").innerHTML = `
+                                        <p><strong>Name:</strong> Ebed meleck</p>
+                                        <p><strong>Email:</strong>ituzeebedi12@gmail.com</p>
+                                        <p><strong>Company:</strong> Innovation Inc</p>
+                                    `;
+                                })
+                                .catch(error => console.error("Error fetching user data:", error));
+                        }
+                
+                        // Canvas API - Drawing feature
+                        const canvas = document.getElementById("drawingCanvas");
+                        const ctx = canvas.getContext("2d");
+                        let drawing = false;
+                
+                        canvas.addEventListener("mousedown", () => drawing = true);
+                        canvas.addEventListener("mouseup", () => drawing = false);
+                        canvas.addEventListener("mousemove", draw);
+                
+                        function draw(event) {
+                            if (!drawing) return;
+                            const rect = canvas.getBoundingClientRect();
+                            const x = event.clientX - rect.left;
+                            const y = event.clientY - rect.top;
+                            ctx.fillStyle = "black";
+                            ctx.fillRect(x, y, 2, 2);
+                        }
+                
+                        function clearCanvas() {
+                            ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        }
+                    </script>
+
+    
+
+                </td>
+            </tr>
+
+         </table>
+
+          <!-- for announcement   -->
+         
+          
+          <!-- main content thet will be changeble  -->
+             
+          
+
+
+           <!-- end main content thet will be changeble  -->
+
+        <!-- [end main content  container ] -->
+    <hr>
+       <!-- [footer for main contented ] -->
+        <footer>
+            <table bgcolor="#1a7599" width="100%">
+                <tr>
+                    <td>
+                        <center>
+                            social media link : 
+                            <a href="https://www.linkedin.com/">
+                                <img src="./asset/img/computer-icons-linkedin-png-favpng-GgCihq48SAGYiUvbtXCDyZ2m8.jpg" width="20px" height="20px" alt="" srcset="">
+                            </a> 
+                            <a href="https://www.youtube.com/">
+                                <img src="./asset/img/98ae159aa1bb8b4243fbe1f9e27d1b9f.png"  height="20px"  width="20px">
+                            </a>
+                            <a href="https://github.com/">
+                                <img src="./asset/img/Github-Logo.png" height="20px" width="20px" alt="">
+                            </a>
+                          
+                        </center>
+                        <hr>
+                        <center>
+                            <p>&copy;2025 Tech Innovators Inc. All rights reserved</p>
+                            <a href="">Privacy Policy</a>|<a href="">Terms & Conditions</a>
+                            <br>
+                            Developed By &hearts; <a href="https://github.com/ISONIC0788">Ebedi </a>
+                        </center>
+                        <a href="#head"> <font color="white">Back Top</font></a>
+                    </td>
+                </tr>
+                
+            </table>
+        </footer>
+       <!-- [end footer for main contented ] -->
+
+
+
+
+
+    <!-- end for main code  -->
+</body>
+</html>

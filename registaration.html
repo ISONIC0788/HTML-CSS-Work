@@ -1,0 +1,236 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Innovators Inc</title>
+    <link rel="shortcut icon" href="./asset/img/logo.png" type="image/x-icon">
+   
+</head>
+<body>
+    <!-- main code will be here  -->
+       <!-- [header for our website ] -->
+        <header id="head">
+            <table width="100%" bgcolor="skyblue">
+                <tr>
+                    <td align="center"><img src="./asset/img/logo.png" alt="logo of tech Innovators " height="100px" width="100px"></td>
+                     <td align="center"> <h1> <b>Tech Innovators Inc</b></h1></td>
+                     <td align="center"><form action="" method="post">     <input type="search" name="" placeholder="Type here to search" id=""> <input type="submit" name=""  id="">
+                     </form></td>
+                </tr>
+            </table>
+        </header>
+        
+       <!-- [end for header of our website ] -->
+       <!-- o	Home
+       o	About
+       o	Contact
+       o	Registration
+       o	Features -->
+       
+         <hr>
+       <!-- [nav link item section ] -->
+          <nav>
+            <table width="100%" bgcolor="#1a7599">
+                <tr>
+                    <td><a href="./index.html">
+                        <font color="white"> Home</font>
+                    </a></td>
+                    <td><a href="./abaut.html">
+                        <font color="white">Abaut</font>
+                        </a></td>
+                    <td> <a href="./contact.html">
+                        <font color="white">Contact</font>
+                        </a></td>
+                    <td><a href="">
+                        <font color="white">Registration</font>
+                        </a></td>
+                    <td> <a href="./feature.html">
+                        <font color="white">Features</font></a></td>
+                </tr>
+            </table>
+                
+                
+               
+                
+               
+          
+          </nav>
+       <!-- [ end nav link item section ] -->
+       <hr>
+        <!-- [main contend container ] -->
+         <table>
+            <tr>
+                <td bgcolor="#2196c4">
+                    <aside>
+                        <h3> <u>Announcement</u> </h3>
+                        <font color="white">
+                        <marquee behavior="scroll" direction="up" scrollamount="3" onmousemove="this.stop()" onmouseleave="this.start()">
+                            <ol>
+                                <li> "New training program launched!", </li>
+                                <li> "Register now for exclusive workshops!" </li>
+                                <li> "New training program launched!", </li>
+                             </ol>  
+                        </marquee>
+                        </font>
+                      </aside>
+            
+                </td>
+                <td>
+                    <aside>
+            
+                        <h1>Register for Our Training Program</h1>
+
+                        <form action="#" method="POST" enctype="multipart/form-data">
+                        
+                          
+                            <fieldset>
+                                <legend><b>Personal Information</b></legend>
+                        
+                                <label for="fullName">Full Name:</label><br>
+                                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required><br><br>
+                        
+                                <label for="dob">Date of Birth:</label><br>
+                                <input type="date" id="dob" name="dob" required><br><br>
+                        
+                                <label>Gender:</label><br>
+                                <input type="radio" id="male" name="gender" value="Male" required>
+                                <label for="male">Male</label><br>
+                                <input type="radio" id="female" name="gender" value="Female" required>
+                                <label for="female">Female</label><br>
+                                <input type="radio" id="other" name="gender" value="Other" required>
+                                <label for="other">Other</label><br><br>
+                            </fieldset>
+                        
+                            <!-- Contact Information -->
+                            <fieldset>
+                                <legend><b>Contact Information</b></legend>
+                        
+                                <label for="email">Email:</label><br>
+                                <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
+                        
+                                <label for="phone">Phone Number:</label><br>
+                                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required pattern="[0-9]{10}"><br><br>
+                        
+                                <label for="address">Address:</label><br>
+                                <textarea id="address" name="address" rows="4" placeholder="Enter your address" required></textarea><br><br>
+                            </fieldset>
+                        
+                            <!-- Account Information -->
+                            <fieldset>
+                                <legend><b>Account Information</b></legend>
+                        
+                                <label for="username">Username:</label><br>
+                                <input type="text" id="username" name="username" placeholder="Create a username" required><br><br>
+                        
+                                <label for="password">Password:</label><br>
+                                <input type="password" id="password" name="password" placeholder="Create a password" required><br><br>
+                        
+                                <label for="confirmPassword">Confirm Password:</label><br>
+                                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required><br><br>
+                            </fieldset>
+                        
+                            <!-- Preferences -->
+                            <fieldset>
+                                <legend><b>Preferences</b></legend>
+                        
+                                <label for="newsletter">Newsletter Subscription:</label><br>
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <label for="newsletter">Subscribe to our newsletter</label><br><br>
+                        
+                                <label for="communication">Preferred Communication Method:</label><br>
+                                <select id="communication" name="communication" required>
+                                    <option value="Email">Email</option>
+                                    <option value="Phone">Phone</option>
+                                    <option value="Both">Both</option>
+                                </select><br><br>
+                            </fieldset>
+                        
+                            <!-- Additional Information -->
+                            <fieldset>
+                                <legend><b>Additional Information</b></legend>
+                        
+                                <label for="profilePic">Profile Picture:</label><br>
+                                <input type="file" id="profilePic" name="profilePic" accept="image/*" required><br><br>
+                        
+                                <label for="bio">Bio:</label><br>
+                                <textarea id="bio" name="bio" rows="4" placeholder="Tell us about yourself" required></textarea><br><br>
+                            </fieldset>
+                        
+                           
+                            <button type="submit">Submit</button>
+                            <button type="reset">Reset</button>
+                        
+                        </form>
+               
+                    </aside>
+
+                </td>
+            </tr>
+
+         </table>
+
+          <!-- for announcement   -->
+         
+          
+          <!-- main content thet will be changeble  -->
+             
+          
+
+
+
+
+           <!-- end main content thet will be changeble  -->
+
+        <!-- [end main content  container ] -->
+    <hr>
+       <!-- [footer for main contented ] -->
+        <footer>
+            <table bgcolor="#1a7599" width="100%">
+                <tr>
+                    <td>
+                        <center>
+                            social media link : 
+                            <a href="https://www.linkedin.com/">
+                                <img src="./asset/img/computer-icons-linkedin-png-favpng-GgCihq48SAGYiUvbtXCDyZ2m8.jpg" width="20px" height="20px" alt="" srcset="">
+                            </a> 
+                            <a href="https://www.youtube.com/">
+                                <img src="./asset/img/98ae159aa1bb8b4243fbe1f9e27d1b9f.png"  height="20px"  width="20px">
+                            </a>
+                            <a href="https://github.com/">
+                                <img src="./asset/img/Github-Logo.png" height="20px" width="20px" alt="">
+                            </a>
+                          
+                        </center>
+                        <hr>
+                        <center>
+                            <p>&copy;2025 Tech Innovators Inc. All rights reserved</p>
+                            <a href="">Privacy Policy</a>|<a href="">Terms & Conditions</a>
+                            <br>
+                            Developed By &hearts; <a href="https://github.com/ISONIC0788">Ebedi </a>
+                        </center>
+                        <a href="#head"> <font color="white">Back Top</font></a>
+                    </td>
+                </tr>
+                
+            </table>
+        </footer>
+       <!-- [end footer for main contented ] -->
+
+
+
+
+
+    <!-- end for main code  -->
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- [] -->

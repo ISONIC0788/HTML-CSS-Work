@@ -1,0 +1,109 @@
+$myfont:'Arial', sans-serif;
+$myBackground30:#166483;
+$myBackground35:#1a7599;
+$myBackground45:#2196c4;
+$myBackground73:#87ceeb;
+$myfontcolo1:white;
+
+*{
+    top: 0px;
+    margin: 0px;
+}
+header {
+    .header-contaner{
+        display: flex;
+        justify-content:space-around;
+      
+        // background-color: $myBackground35;
+        border-radius: 0.5em;
+        margin-top:0.5em;
+        box-shadow: 2px 3px 5px rgba(230, 228, 228, 0.5);
+        .search-container{
+            padding: 1em;
+            .form-container{
+                position: relative;
+              
+                .input-seach{
+                    outline: none;
+                    padding: 5px 15px;
+                    
+                    border-radius: 2em;
+                    border: 1px solid rgb(210, 203, 203);
+                    
+                    box-shadow: 2px 1px 1px rgba(255, 255, 255, 0.651);
+                }
+                .input-send{
+                    margin-left: -3em;
+                    padding: 5px;
+                    border-radius: 2em;
+                    border: none;
+                    width: 5rem;
+                    background-color: black;
+                    color: white;
+                    font-weight: bold;
+
+                }
+            }
+        }
+        .word-logo-container{
+            padding: 0.2    em;
+            // color: ;
+            .word-tech{
+                color: $myBackground45;
+                font-size: 3rem;
+            }
+
+        }
+    }
+}
+
+.nav-container{
+     
+    .list-container{
+        display: flex;
+        justify-content: space-around;
+        background-color: $myBackground45 ;
+        
+
+        li{
+            list-style-type: none;
+            padding: 10px;
+
+            a{
+                text-decoration: none;
+                text-transform: capitalize;
+                font-weight: bold;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                color: rgb(218, 217, 217);
+            }
+        }
+        li:hover a {
+             color: white;
+             
+        }   
+        
+    } 
+    
+}
+
+
+// body-content 
+
+.container-main{
+    // background-image: url(../img/tech2.jpg);
+        
+    .container-div{
+        display: flex;
+        padding: 5rem;
+    }
+    // background-color: red;
+    .second-aside{
+        max-width: 100%;
+        // padding-left: 1rem;
+        .header-cont{
+             padding: 10px;
+            text-align: center;
+        }
+    }
+}
+
