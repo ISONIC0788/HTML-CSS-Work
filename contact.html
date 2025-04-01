@@ -5,146 +5,196 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Innovators Inc</title>
     <link rel="shortcut icon" href="./asset/img/logo.png" type="image/x-icon">
-   
+   <!-- <link rel="stylesheet" href="./asset/css/"> -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+   <!-- <link rel="stylesheet" href="./asset/css/index.css"> -->
+    <link rel="stylesheet" href="./asset/css/index2.css">
+    <link rel="stylesheet" href="./asset/css/index1.css">
+    <link rel="stylesheet" href="./asset/css/darkmode.css">
+    <link rel="stylesheet" href="./asset/css/contact.css">
+
+
 </head>
-<body>
+<body class="container">
     <!-- main code will be here  -->
        <!-- [header for our website ] -->
         <header id="head">
-            <table width="100%" bgcolor="skyblue" >
-                <tr>
-                    <td align="center"><img src="./asset/img/logo.png" alt="logo of tech Innovators " height="100px" width="100px"></td>
-                     <td align="center"> <h1> <b>Tech Innovators Inc</b></h1></td>
-                     <td align="center"><form action="" method="post">     <input type="search" name="" placeholder="Type here to search" id=""> <input type="submit" name=""  id="">
-                     </form></td>
-                </tr>
-            </table>
+      
+       <!-- [CSS  HEADER ] -->
+         <div class="header-contaner">
+             <section class="logo-container">
+                <img src="./asset/img/logo.png" alt="logo of tech Innovators " height="50px" width="50px">
+             </section>
+             <section class="word-logo-container">
+                <h1> <b> <span class="word-tech">Tech</span>Innovators Inc</b></h1>
+             </section>
+             <section class="search-container">
+                <form action="" method="post" class="form-container">     <input type="search" name="" class="input-seach " placeholder="Type here to search" id=""> <input type="submit" class="input-send" value="Go"  name=""  id="">
+                </form>
+             </section>
+            
+             <select id="theme-selector" class="theme-switcher">
+                <option value="light">Light Mode</option>
+                <option value="dark">Dark Mode</option>
+            </select>
+            
+         </div>
+
+         <!-- [CSS  HEADER ] -->
+
+
+
+            
+           <!--  search box  -->
+             <!-- <form action="" method="post"> -->
+
+           
+             <!-- </form> -->
         </header>
         
        <!-- [end for header of our website ] -->
-       <!-- o	Home
-       o	About
-       o	Contact
-       o	Registration
-       o	Features -->
+    
        
          <hr>
        <!-- [nav link item section ] -->
-          <nav>
-            <table width="100%" bgcolor="#1a7599">
-                <tr>
-                    <td><a href="./index.html">
-                        <font color="white">Home</font></a></td>
-                    <td><a href="./abaut.html">
-                        <font color="white">Abaut</font></a></td>
-                    <td><a href="">
-                        <font color="white">Contact</font></a></td>
-                    <td><a href="./registaration.html">
-                        <font color="white">Registration</font></a></td>
-                    <td><a href="./feature.html">
-                        <font color="white">Features</font></a></td>
-                </tr>
-            </table>
+          <nav class="nav-container">
+            <div class="container-for-menu " id="menuicon">
+                <svg width="50px" height="50px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="#000000" fill-rule="evenodd" d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z"></path> </g></svg>
+            </div>
+        
+                <!-- container for nav   -->
+                <ul class="list-container" id="menulist">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./abaut.html">Abaut</a></li>
+                    <li><a href="" class="active-link">Contact</a></li>
+                    <li><a href="./registaration.html">registaration</a></li>
+                    <li><a href="./feature.html">Features</a></li>
+                    <li class="has-dropdown">
+                        <a href="#">Services</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Web Development</a></li>
+                            <li><a href="#">Cloud Solutions</a></li>
+                        </ul>
+                    </li>
+            
+                    <!-- Training Dropdown -->
+                    <li class="has-dropdown">
+                        <a href="#">Training</a>
+                        <ul class="dropdown">
+                            <li><a href="#">HTML & CSS</a></li>
+                            <li><a href="#">JavaScript</a></li>
+                            <li><a href="#">Python</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                 <!-- [end for container for nav bar ] -->
+ 
           </nav>
        <!-- [ end nav link item section ] -->
-       <hr>
+     
         <!-- [main contend container ] -->
-         <table>
-            <tr>
-                <td bgcolor="#2196c4">
-                    <aside>
-                        <h3> <u>Announcement</u> </h3>
-                        <font color="white">
+         <main class="card  container-main">
+            <div class="container-div">
+                <!-- [start of container] -->
+                <section class="first-aside">
+                    <h3 class=""> <u>Announcement</u> </h3>
                         <marquee behavior="scroll" direction="up" scrollamount="3" onmousemove="this.stop()" onmouseleave="this.start()">
-                            <ol>
-                                <li> "New training program launched!", </li>
-                                <li> "Register now for exclusive workshops!" </li>
-                                <li> "New training program launched!", </li>
-                             </ol>  
+                             
+                            <div class="textannounce"> "New training program launched!", </div>
+                            <div class="textannounce"> "Register now for exclusive workshops!" </div>
+                            <div class="textannounce"> "New training program launched!", </div>
+                            <div class="textannounce"> "New training program launched!", </div>
+                            <div class="textannounce"> "Register now for exclusive workshops!" </div>
+                            <div class="textannounce"> "New training program launched!", </div>
+                       
+                            <div class="textannounce"> "New training program launched!", </div>
+                            <div class="textannounce"> "Register now for exclusive workshops!" </div>
+                            <div class="textannounce"> "New training program launched!", </div>
+                       
+                       
+                           
                         </marquee>
-                        </font>
-                      </aside>
-            
-                </td>
-                <td>
-                    <aside>
-            
-                        
-    <h1>Contact Us</h1>
+                  </section>
+                  <section class="second-aside">
+                
+                   
 
-    <!-- Contact Form -->
-    <form action="#" method="POST">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" required><br><br>
+                    <!-- Contact Form Section -->
+                    <section class="contact-form-section">
+                        <h1>Contact Us</h1>
+                        <form action="#" method="POST">
+                            <label for="name">Name:</label><br>
+                            <input type="text" id="name" name="name" required><br><br>
+                    
+                            <label for="email">Email:</label><br>
+                            <input type="email" id="email" name="email" required><br><br>
+                    
+                            <label for="message">Message:</label><br>
+                            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+                    
+                            <button type="submit">Submit</button>
+                        </form>
+                    </section>
+                    
+                    <!-- Google Maps Section -->
+                    <section class="find-us-section">
+                        <h2>Find Us Here</h2>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63799.805530021426!2d30.054264565179544!3d-1.958413569952615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca4258ed8e797%3A0xf32b36a5411d0bc8!2sKigali!5e0!3m2!1sen!2srw!4v1742309637692!5m2!1sen!2srw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </section>
+                    
+                    <!-- Contact Details Section -->
+                    <section class="contact-details-section">
+                        <h3>Contact Information</h3>
+                        <p>Tel Number: (+250) 788459217</p>
+                        <p>Email: <a href="mailto:ituzeebedi12@gmail.com">ituzeebedi12@gmail.com</a></p>
+                    </section>
+                    
+                  </section>
+    
+                <!-- [end fro start of container ] -->
 
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
-
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" rows="4" required></textarea><br><br>
-
-        <button type="submit">Submit</button>
-    </form>
-
-    <!-- Embedded Map (Google Maps) -->
-    <h2>Find Us Here</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63799.805530021426!2d30.054264565179544!3d-1.958413569952615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca4258ed8e797%3A0xf32b36a5411d0bc8!2sKigali!5e0!3m2!1sen!2srw!4v1742309637692!5m2!1sen!2srw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                  <br>
-                   Tel Number (+250) 788459217
-                   <br>
-                   <a href="">ituzeebedi12@gmail.com</a>
-                    </aside>
-
-                </td>
-            </tr>
-
-         </table>
-
-          <!-- for announcement   -->
-         
-          
-          <!-- main content thet will be changeble  -->
-             
-          
-
-
-
-
-           <!-- end main content thet will be changeble  -->
+            </div>
+           
+           
+         </main>
+        
+    
 
         <!-- [end main content  container ] -->
     <hr>
        <!-- [footer for main contented ] -->
-        <footer bgcolor="skyblue">
-            <table bgcolor="#1a7599" width="100%">
-                <tr>
-                    <td>
-                        <center>
-                            social media link : 
-                            <a href="https://www.linkedin.com/">
-                                <img src="./asset/img/computer-icons-linkedin-png-favpng-GgCihq48SAGYiUvbtXCDyZ2m8.jpg" width="20px" height="20px" alt="" srcset="">
-                            </a> 
-                            <a href="https://www.youtube.com/">
-                                <img src="./asset/img/98ae159aa1bb8b4243fbe1f9e27d1b9f.png"  height="20px"  width="20px">
-                            </a>
-                            <a href="https://github.com/">
-                                <img src="./asset/img/Github-Logo.png" height="20px" width="20px" alt="">
-                            </a>
-                          
-                        </center>
-                        <hr>
-                        <center>
-                            <p>&copy;2025 Tech Innovators Inc. All rights reserved</p>
-                            <a href="">Privacy Policy</a>|<a href="">Terms & Conditions</a>
-                            <br>
-                            Developed By &hearts; <a href="https://github.com/ISONIC0788">Ebedi </a>
-                        </center>
-                        <a href="#head"> <font color="white">Back Top</font></a>
-                    </td>
-                </tr>
-                
-            </table>
-        </footer>
+       <footer>
+        <div class="social-media-links">
+            <p>Social media links:</p>
+            <nav>
+                <a href="https://www.linkedin.com/">
+                    <img src="./asset/img/computer-icons-linkedin-png-favpng-GgCihq48SAGYiUvbtXCDyZ2m8.jpg" width="20px" height="20px" alt="LinkedIn">
+                </a>
+                <a href="https://www.youtube.com/">
+                    <img src="./asset/img/98ae159aa1bb8b4243fbe1f9e27d1b9f.png" height="20px" width="20px" alt="YouTube">
+                </a>
+                <a href="https://github.com/">
+                    <img src="./asset/img/Github-Logo.png" height="20px" width="20px" alt="GitHub">
+                </a>
+            </nav>
+        </div>
+    
+        <hr>
+    
+        <div class="footer-info">
+            <p>&copy;2025 Tech Innovators Inc. All rights reserved</p>
+            <p>
+                <a href="">Privacy Policy</a> | <a href="">Terms & Conditions</a>
+            </p>
+            <p>Developed By &hearts; <a href="https://github.com/ISONIC0788">Ebedi</a></p>
+        </div>
+    
+        <a href="#head" class="back-top">
+            <svg viewBox="0 0 24 24" width="20px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 7V17M12 7L16 11M12 7L8 11" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+        </a>
+    </footer>
+    
        <!-- [end footer for main contented ] -->
 
 
@@ -154,3 +204,40 @@
     <!-- end for main code  -->
 </body>
 </html>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const themeSelector = document.getElementById("theme-selector");
+    const currentTheme = localStorage.getItem("theme") || "light";
+
+    // Apply the saved theme
+    document.body.classList.toggle("dark-mode", currentTheme === "dark");
+    themeSelector.value = currentTheme;
+
+    // Change theme on selection
+    themeSelector.addEventListener("change", function () {
+        if (this.value === "dark") {
+            document.body.classList.add("dark-mode");
+            localStorage.setItem("theme", "dark");
+        } else {
+            document.body.classList.remove("dark-mode");
+            localStorage.setItem("theme", "light");
+        }
+    });
+});
+
+const menuIcon = document.getElementById('menuicon');
+const menuList = document.getElementById('menulist');
+
+menuIcon.addEventListener("click", () => {
+        menuList.classList.toggle("show");
+    });
+
+    document.addEventListener("click", (event) => {
+        if (!menuIcon.contains(event.target) && !menuList.contains(event.target)) {
+            menuList.classList.remove("show");
+            // menuList.classList.toggle("");
+        }
+    });
+</script>

@@ -7,7 +7,10 @@
     <link rel="shortcut icon" href="./asset/img/logo.png" type="image/x-icon">
    <!-- <link rel="stylesheet" href="./asset/css/"> -->
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-   <link rel="stylesheet" href="./asset/css/index.css">
+   <!-- <link rel="stylesheet" href="./asset/css/index.css"> -->
+    <link rel="stylesheet" href="./asset/css/index2.css">
+    <link rel="stylesheet" href="./asset/css/index1.css">
+    <link rel="stylesheet" href="./asset/css/darkmode.css">
 
 
 </head>
@@ -25,10 +28,15 @@
                 <h1> <b> <span class="word-tech">Tech</span>Innovators Inc</b></h1>
              </section>
              <section class="search-container">
-                <form action="" method="post" class="form-container">     <input type="search" name="" class="input-seach " placeholder="Type here to search" id=""> <input type="submit" class="input-send"  name=""  id="">
+                <form action="" method="post" class="form-container">     <input type="search" name="" class="input-seach " placeholder="Type here to search" id=""> <input type="submit" class="input-send" value="Go"  name=""  id="">
                 </form>
              </section>
-
+            
+             <select id="theme-selector" class="theme-switcher">
+                <option value="light">Light Mode</option>
+                <option value="dark">Dark Mode</option>
+            </select>
+            
          </div>
 
          <!-- [CSS  HEADER ] -->
@@ -49,14 +57,35 @@
          <hr>
        <!-- [nav link item section ] -->
           <nav class="nav-container">
+
+            <div class="container-for-menu " id="menuicon">
+                <svg width="50px" height="50px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="#000000" fill-rule="evenodd" d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z"></path> </g></svg>
+            </div>
         
                 <!-- container for nav   -->
-                <ul class="list-container">
-                    <li><a href="#">Home</a></li>
+                <ul class="list-container" id="menulist">
+                    <li><a href="#" class="active-link">Home</a></li>
                     <li><a href="./abaut.html">Abaut</a></li>
                     <li><a href="./contact.html">Contact</a></li>
                     <li><a href="./registaration.html">registaration</a></li>
                     <li><a href="./feature.html">Features</a></li>
+                    <li class="has-dropdown">
+                        <a href="#">Services</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Web Development</a></li>
+                            <li><a href="#">Cloud Solutions</a></li>
+                        </ul>
+                    </li>
+            
+                    <!-- Training Dropdown -->
+                    <li class="has-dropdown">
+                        <a href="#">Training</a>
+                        <ul class="dropdown">
+                            <li><a href="#">HTML & CSS</a></li>
+                            <li><a href="#">JavaScript</a></li>
+                            <li><a href="#">Python</a></li>
+                        </ul>
+                    </li>
                 </ul>
 
                  <!-- [end for container for nav bar ] -->
@@ -71,11 +100,18 @@
                 <section class="first-aside">
                     <h3 class=""> <u>Announcement</u> </h3>
                         <marquee behavior="scroll" direction="up" scrollamount="3" onmousemove="this.stop()" onmouseleave="this.start()">
-                            <ol>
-                                <li> "New training program launched!", </li>
-                                <li> "Register now for exclusive workshops!" </li>
-                                <li> "New training program launched!", </li>
-                             </ol>  
+                             
+                                <div class="textannounce"> "New training program launched!", </div>
+                                <div class="textannounce"> "Register now for exclusive workshops!" </div>
+                                <div class="textannounce"> "New training program launched!", </div>
+                                <div class="textannounce"> "New training program launched!", </div>
+                                <div class="textannounce"> "Register now for exclusive workshops!" </div>
+                                <div class="textannounce"> "New training program launched!", </div>
+                                <div class="textannounce"> "New training program launched!", </div>
+                                <div class="textannounce"> "Register now for exclusive workshops!" </div>
+                                <div class="textannounce"> "New training program launched!", </div>
+                               
+                           
                         </marquee>
                   </section>
                   <section class="second-aside">
@@ -109,39 +145,37 @@
         <!-- [end main content  container ] -->
     <hr>
        <!-- [footer for main contented ] -->
-        <footer >
-            <table bgcolor="#1a7599" width="100%">
-                <tr>
-                    <td>
-                        <center>
-                            social media link : 
-                            <a href="https://www.linkedin.com/">
-                                <img src="./asset/img/computer-icons-linkedin-png-favpng-GgCihq48SAGYiUvbtXCDyZ2m8.jpg" width="20px" height="20px" alt="" srcset="">
-                            </a> 
-                            <a href="https://www.youtube.com/">
-                                <img src="./asset/img/98ae159aa1bb8b4243fbe1f9e27d1b9f.png"  height="20px"  width="20px">
-                            </a>
-                            <a href="https://github.com/">
-                                <img src="./asset/img/Github-Logo.png" height="20px" width="20px" alt="">
-                            </a>
-                          
-                        </center>
-                        <hr>
-                        <center>
-                              
-                            <p>&copy;2025 Tech Innovators Inc. All rights reserved</p>
-                            <a href="">Privacy Policy</a>|<a href="">Terms & Conditions</a>
-                            <br>
-                            Developed By &hearts; <a href="https://github.com/ISONIC0788">Ebedi </a>
-                        </center>
-                        <a href="#head"> <font color="white">Back Top</font></a>
-                    </td>
-                    
-                </tr>
-                
-            </table>
-           
-        </footer>
+       <footer>
+        <div class="social-media-links">
+            <p>Social media links:</p>
+            <nav>
+                <a href="https://www.linkedin.com/">
+                    <img src="./asset/img/computer-icons-linkedin-png-favpng-GgCihq48SAGYiUvbtXCDyZ2m8.jpg" width="20px" height="20px" alt="LinkedIn">
+                </a>
+                <a href="https://www.youtube.com/">
+                    <img src="./asset/img/98ae159aa1bb8b4243fbe1f9e27d1b9f.png" height="20px" width="20px" alt="YouTube">
+                </a>
+                <a href="https://github.com/">
+                    <img src="./asset/img/Github-Logo.png" height="20px" width="20px" alt="GitHub">
+                </a>
+            </nav>
+        </div>
+    
+        <hr>
+    
+        <div class="footer-info">
+            <p>&copy;2025 Tech Innovators Inc. All rights reserved</p>
+            <p>
+                <a href="">Privacy Policy</a> | <a href="">Terms & Conditions</a>
+            </p>
+            <p>Developed By &hearts; <a href="https://github.com/ISONIC0788">Ebedi</a></p>
+        </div>
+    
+        <a href="#head" class="back-top"> 
+            <svg viewBox="0 0 24 24" width="20px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 7V17M12 7L16 11M12 7L8 11" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+        </a>
+    </footer>
+    
        <!-- [end footer for main contented ] -->
 
 
@@ -151,3 +185,41 @@
     <!-- end for main code  -->
 </body>
 </html>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const themeSelector = document.getElementById("theme-selector");
+    const currentTheme = localStorage.getItem("theme") || "light";
+
+    // Apply the saved theme
+    document.body.classList.toggle("dark-mode", currentTheme === "dark");
+    themeSelector.value = currentTheme;
+
+    // Change theme on selection
+    themeSelector.addEventListener("change", function () {
+        if (this.value === "dark") {
+            document.body.classList.add("dark-mode");
+            localStorage.setItem("theme", "dark");
+        } else {
+            document.body.classList.remove("dark-mode");
+            localStorage.setItem("theme", "light");
+        }
+    });
+});
+
+
+const menuIcon = document.getElementById('menuicon');
+const menuList = document.getElementById('menulist');
+
+menuIcon.addEventListener("click", () => {
+        menuList.classList.toggle("show");
+    });
+
+    document.addEventListener("click", (event) => {
+        if (!menuIcon.contains(event.target) && !menuList.contains(event.target)) {
+            menuList.classList.remove("show");
+            // menuList.classList.toggle("");
+        }
+    });
+</script>

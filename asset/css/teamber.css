@@ -1,0 +1,114 @@
+/* Section Header */
+section h1, section h2 {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* Team Members Section */
+.team-members {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Team Member Styling */
+.team-member {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 30%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.team-member figure {
+    margin: 0;
+}
+
+.cont-technology{
+    list-style-type: lower-roman;
+}
+
+.team-member img {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.team-member figcaption {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #007bff;
+}
+
+.team-member p {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+.team-member a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.team-member a:hover {
+    text-decoration: underline;
+}
+
+/* Skills/Technologies Section */
+h2 + ul {
+    margin-top: 20px;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+ul li {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-member {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    h1, h2 {
+        font-size: 1.6rem;
+    }
+
+    ul li {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-member {
+        width: 100%;
+        padding: 15px;
+    }
+
+    h1, h2 {
+        font-size: 1.4rem;
+    }
+
+    ul li {
+        font-size: 0.9rem;
+    }
+}

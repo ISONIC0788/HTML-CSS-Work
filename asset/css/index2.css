@@ -1,0 +1,173 @@
+/* Header Section */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #007bff;
+    width: 100%;
+}
+
+.logo-container img {
+    height: 50px;
+    width: 50px;
+}
+
+.word-logo-container h1 {
+    font-size: 24px;
+    color: white;
+    margin: 0;
+}
+
+.search-container form {
+    display: flex;
+    align-items: center;
+}
+
+.input-search {
+    padding: 5px;
+    border: none;
+    margin-right: 10px;
+}
+
+.input-send {
+    padding: 5px 10px;
+    border: none;
+    background-color: #4db8ff;
+    color: white;
+    cursor: pointer;
+}
+
+/* Sticky Navigation */
+.nav-container {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #007bff;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container .list-container {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-container .list-container li {
+    margin: 0 20px;
+  
+}
+
+.nav-container .list-container li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.3s ease;
+   
+    
+}
+
+.nav-container .list-container li a:hover {
+    color: #4db8ff;
+    transform: scale(1.1);
+
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    .nav-container .list-container {
+        flex-direction: column;
+    }
+    .nav-container .list-container li {
+        margin: 10px 0;
+    }
+}
+
+/* Main Section */
+.container-main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f4f4f4;
+    flex-wrap: wrap;
+}
+
+.first-aside {
+    width: 30%;
+    padding: 20px;
+    background-color: #e0f7fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.second-aside {
+    width: 65%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Back to Top Button */
+#backToTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #ffcc00;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#backToTopBtn:hover {
+    background-color: #ff9900;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .container-main {
+        flex-direction: column;
+    }
+    body > main > div{
+        
+
+    }
+    .first-aside, .second-aside {
+        width: 100%;
+    }
+    #backToTopBtn {
+        bottom: 20px;
+        right: 20px;
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+
+
+/* drop down menu */
+
+.dropdown {
+    display: none;
+    list-style: none;
+    padding-left: 15px;
+    /* background-color: red; */
+    background-color: #4db8ff;
+    position: absolute;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    padding: 5px 0px;
+}
+
+/* Show dropdown when parent is hovered */
+.has-dropdown:hover .dropdown {
+    display: block;
+}

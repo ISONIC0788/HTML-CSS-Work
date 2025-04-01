@@ -1,0 +1,85 @@
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text for dark mode */
+}
+
+body.dark-mode .header-contaner {
+    background-color: #333; /* Dark background for header */
+}
+
+body.dark-mode .word-logo-container h1 {
+    color: #fff; /* White text for logo */
+}
+
+body.dark-mode .nav-container {
+    background-color: #222; /* Dark nav bar */
+}
+
+/* body.dark-mode .cont-technology{
+    color: #fff;
+} */
+
+body.dark-mode .nav-container .list-container li a {
+    color: #e0e0e0; /* Light text color for nav links */
+}
+
+body.dark-mode .nav-container .list-container li a:hover {
+    color: #4db8ff; /* Highlight color on hover */
+}
+
+body.dark-mode  .textannounce{
+   color: white;
+}
+
+body.dark-mode .container-main {
+    background-color: #1e1e1e; /* Dark background for main section */
+}
+
+body.dark-mode .first-aside {
+    background-color: #333; /* Dark aside section */
+    color: #e0e0e0; /* Light text */
+}
+
+body.dark-mode .second-aside {
+    background-color: #282828; /* Darker background for content section */
+    color: #e0e0e0; /* Light text */
+}
+body.dark-mode .second-aside .cont-technology li{
+    color: #fff;
+}
+body.dark-mode .second-aside .team-member{
+    background-color: #121212;
+    color: white;
+}
+body.dark-mode .second-aside .team-member p{
+    /* background-color: #121212; */
+    color: white;
+}
+
+body.dark-mode footer {
+    background-color: #1a1a1a; /* Dark footer */
+    color: #e0e0e0; /* Light footer text */
+}
+
+body.dark-mode footer .social-media-links a img {
+    filter: brightness(1.5); /* Bright icons for dark mode */
+}
+
+body.dark-mode .back-top {
+    background-color: #ffcc00; /* Yellow back-to-top button */
+    color: #fff;
+}
+
+body.dark-mode #backToTopBtn {
+    background-color: #ffcc00; /* Button for dark mode */
+}
+
+/* Dark mode for links */
+body.dark-mode .footer-info a {
+    color: #4db8ff; /* Light blue links */
+}
+
+body.dark-mode .footer-info a:hover {
+    color: #fff; /* White on hover */
+}
