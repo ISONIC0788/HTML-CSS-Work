@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./asset/css/index1.css">
     <link rel="stylesheet" href="./asset/css/darkmode.css">
     <link rel="stylesheet" href="./asset/css/contact.css">
+    <link rel="stylesheet" href="./asset/css/clocks.css">
 
 
 </head>
@@ -33,10 +34,11 @@
                 </form>
              </section>
             
-             <select id="theme-selector" class="theme-switcher">
+             <!-- <select id="theme-selector" class="theme-switcher">
                 <option value="light">Light Mode</option>
                 <option value="dark">Dark Mode</option>
-            </select>
+            </select> -->
+            <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
             
          </div>
 
@@ -115,6 +117,20 @@
                        
                            
                         </marquee>
+
+                        <section class="circle-clock text-center my-5">
+                            <h2 class="mb-4">Real-Time Clock</h2>
+                          
+                            <div class="clock-face">
+                              <div class="center-point"></div>
+                              <div class="hand hour" id="hour-hand"></div>
+                              <div class="hand minute" id="minute-hand"></div>
+                              <div class="hand second" id="second-hand"></div>
+                            </div>
+                          
+                            <div class="digital-time mt-4" id="digital-clock"></div>
+                          </section>
+                          
                   </section>
                   <section class="second-aside">
                 
@@ -123,18 +139,24 @@
                     <!-- Contact Form Section -->
                     <section class="contact-form-section">
                         <h1>Contact Us</h1>
-                        <form action="#" method="POST">
-                            <label for="name">Name:</label><br>
-                            <input type="text" id="name" name="name" required><br><br>
-                    
-                            <label for="email">Email:</label><br>
-                            <input type="email" id="email" name="email" required><br><br>
-                    
-                            <label for="message">Message:</label><br>
-                            <textarea id="message" name="message" rows="4" required></textarea><br><br>
-                    
-                            <button type="submit">Submit</button>
-                        </form>
+                        <form id="contact-form" novalidate>
+                            <label for="name">Name:</label><br />
+                            <input type="text" id="name" name="name" required /><br /><br />
+                          
+                            <label for="email">Email (must be @techinnovators.com):</label><br />
+                            <input type="email" id="email" name="email" required /><br />
+                            <small id="email-error" class="text-danger d-none">Invalid email domain</small><br /><br />
+                          
+                            <label for="password">Password:</label><br />
+                            <input type="password" id="password" name="password" required /><br />
+                            <div id="strength-meter" class="mt-2 mb-2 fw-semibold"></div><br />
+                          
+                            <label for="message">Message:</label><br />
+                            <textarea id="message" name="message" rows="4" required></textarea><br /><br />
+                          
+                            <button type="submit" id="submit-btn" disabled>Submit</button>
+                          </form>
+                          
                     </section>
                     
                     <!-- Google Maps Section -->
@@ -207,25 +229,41 @@
 
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     const themeSelector = document.getElementById("theme-selector");
-    const currentTheme = localStorage.getItem("theme") || "light";
 
-    // Apply the saved theme
+    // Detect OS theme preference if not saved
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const savedTheme = localStorage.getItem("theme");
+    const currentTheme = savedTheme || (prefersDarkScheme ? "dark" : "light");
+
+    // Apply theme on load
     document.body.classList.toggle("dark-mode", currentTheme === "dark");
-    themeSelector.value = currentTheme;
 
-    // Change theme on selection
-    themeSelector.addEventListener("change", function () {
-        if (this.value === "dark") {
-            document.body.classList.add("dark-mode");
-            localStorage.setItem("theme", "dark");
-        } else {
-            document.body.classList.remove("dark-mode");
-            localStorage.setItem("theme", "light");
-        }
-    });
+    // If themeSelector exists, update its value
+    if (themeSelector) {
+        themeSelector.value = currentTheme;
+        themeSelector.addEventListener("change", function () {
+            const isDark = this.value === "dark";
+            document.body.classList.toggle("dark-mode", isDark);
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+        });
+    }
 });
+
+const toggleBtn = document.getElementById("theme-toggle");
+
+if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+        const isDark = document.body.classList.toggle("dark-mode");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+        toggleBtn.textContent = isDark ? "☀️" : "🌙";
+    });
+
+    // Set icon on load
+    const theme = localStorage.getItem("theme") || (prefersDarkScheme ? "dark" : "light");
+    toggleBtn.textContent = theme === "dark" ? "☀️" : "🌙";
+}
 
 const menuIcon = document.getElementById('menuicon');
 const menuList = document.getElementById('menulist');
@@ -240,4 +278,83 @@ menuIcon.addEventListener("click", () => {
             // menuList.classList.toggle("");
         }
     });
+
+
+    //clock
+
+    function updateClock() {
+  const now = new Date();
+
+  const hour = now.getHours();
+  const min = now.getMinutes();
+  const sec = now.getSeconds();
+
+  // Digital
+  const digital = document.getElementById('digital-clock');
+  digital.textContent = `${String(hour).padStart(2, '0')}:${String(min).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
+
+  // Analog
+  const hourDeg = ((hour % 12) + min / 60) * 30;
+  const minDeg = min * 6;
+  const secDeg = sec * 6;
+
+  document.getElementById('hour-hand').style.transform = `translateX(-50%) rotate(${hourDeg}deg)`;
+  document.getElementById('minute-hand').style.transform = `translateX(-50%) rotate(${minDeg}deg)`;
+  document.getElementById('second-hand').style.transform = `translateX(-50%) rotate(${secDeg}deg)`;
+}
+
+// Run every second
+setInterval(updateClock, 1000);
+updateClock(); // Run immediately
+
+
+
+const form = document.getElementById("contact-form");
+const emailInput = document.getElementById("email");
+const passwordInput = document.getElementById("password");
+const submitBtn = document.getElementById("submit-btn");
+const strengthMeter = document.getElementById("strength-meter");
+const emailError = document.getElementById("email-error");
+
+function validateEmail() {
+  const email = emailInput.value.trim();
+  const valid = email.endsWith("@techinnovators.com");
+  emailError.classList.toggle("d-none", valid);
+  return valid;
+}
+
+function validatePassword() {
+  const password = passwordInput.value;
+  const lengthValid = password.length >= 8;
+  const hasNumber = /\d/.test(password);
+  const hasSpecial = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+  let strength = "weak";
+  if (lengthValid && hasSpecial) strength = "medium";
+  if (lengthValid && hasNumber && hasSpecial && password.length >= 12)
+    strength = "strong";
+
+  strengthMeter.textContent = `Strength: ${strength}`;
+  strengthMeter.className = strength;
+
+  return lengthValid && hasNumber && hasSpecial;
+}
+
+function checkFormValidity() {
+  const emailValid = validateEmail();
+  const passwordValid = validatePassword();
+  submitBtn.disabled = !(emailValid && passwordValid);
+}
+
+// Attach listeners
+emailInput.addEventListener("input", checkFormValidity);
+passwordInput.addEventListener("input", checkFormValidity);
+
+// Optional: prevent default form submission for now
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  alert("Form submitted successfully!");
+});
+
+
 </script>

@@ -1,0 +1,128 @@
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+#head.dark-mode {
+    background-color: #222;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.header-container.dark-mode {
+    /* Header styles in dark mode */
+}
+
+.nav-container.dark-mode {
+    background-color: #222;
+    color: #eee;
+    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
+}
+
+.list-container.dark-mode a {
+    color: #eee;
+}
+
+.list-container.dark-mode a.active-link {
+    color: #0099ff; /* Brighter blue */
+}
+
+.dropdown.dark-mode {
+    background-color: #222;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+    border: 1px solid #555;
+    border-top: none;
+}
+
+.first-aside.dark-mode {
+    background-color: #333;
+    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
+}
+
+.second-aside.dark-mode {
+    background-color: #444;
+    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
+}
+
+/* Course Gallery Dark Mode */
+.course-gallery.dark-mode {
+    background-color: #222;
+    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
+}
+
+.course-card.dark-mode {
+    border: 1px solid #555;
+}
+
+.course-title.dark-mode {
+    color: #eee;
+}
+
+.lightbox-content.dark-mode {
+    background-color: #333;
+    border: 1px solid #888;
+}
+
+/* Live Clocks Dark Mode */
+.clocks-section.dark-mode {
+    background-color: #222;
+    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
+}
+
+.analog-clock.dark-mode {
+    border: 2px solid #eee;
+}
+
+.hour-hand.dark-mode,
+.minute-hand.dark-mode {
+    background-color: #eee;
+}
+
+.second-hand.dark-mode {
+    background-color: #eee;
+}
+
+.digital-clock.dark-mode {
+    color: #aaa;
+}
+
+/* Registration Form Dark Mode */
+.registration-form.dark-mode {
+    background-color: #222;
+    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
+}
+
+/* FAQ Section Dark Mode */
+.faq-section.dark-mode {
+    background-color: #222;
+    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
+}
+
+.faq-question.dark-mode {
+    background-color: #333;
+    color: #eee;
+}
+
+.faq-question.dark-mode:hover {
+    background-color: #444;
+}
+
+.faq-answer.dark-mode {
+    background-color: #444;
+    border-left-color: #0099ff; /* Brighter blue */
+}
+
+footer.dark-mode {
+    background-color: #222;
+    color: #aaa;
+    box-shadow: 0 -2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.social-media-links.dark-mode a {
+    /* Social links in dark mode */
+}
+
+.back-top.dark-mode {
+    background-color: #444;
+    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
+}

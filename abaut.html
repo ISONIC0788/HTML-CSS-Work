@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./asset/css/index1.css">
     <link rel="stylesheet" href="./asset/css/darkmode.css">
     <link rel="stylesheet" href="./asset/css/teamber.css">
-
+    <link rel="stylesheet" href="./asset/css/clocks.css">
 
 </head>
 <body class="container">
@@ -33,10 +33,11 @@
                 </form>
              </section>
             
-             <select id="theme-selector" class="theme-switcher">
+             <!-- <select id="theme-selector" class="theme-switcher">
                 <option value="light">Light Mode</option>
                 <option value="dark">Dark Mode</option>
-            </select>
+            </select> -->
+            <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
             
          </div>
 
@@ -113,6 +114,19 @@
                        
                            
                         </marquee>
+                        <section class="circle-clock text-center my-5">
+                            <h2 class="mb-4">Real-Time Clock</h2>
+                          
+                            <div class="clock-face">
+                              <div class="center-point"></div>
+                              <div class="hand hour" id="hour-hand"></div>
+                              <div class="hand minute" id="minute-hand"></div>
+                              <div class="hand second" id="second-hand"></div>
+                            </div>
+                          
+                            <div class="digital-time mt-4" id="digital-clock"></div>
+                          </section>
+                          
                   </section>
                   <section class="second-aside">
                 
@@ -160,6 +174,40 @@
                                 <li>Data Science</li>
                             </ul>
                         </section>
+                        <section class="faq-section mt-5">
+                            <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+                          
+                            <div class="faq-item">
+                              <button class="faq-question">
+                                What courses do you offer?
+                                <span class="icon">+</span>
+                              </button>
+                              <div class="faq-answer">
+                                We offer training in Web Development, Cloud Computing, Cybersecurity, Python, and more.
+                              </div>
+                            </div>
+                          
+                            <div class="faq-item">
+                              <button class="faq-question">
+                                How do I register for a course?
+                                <span class="icon">+</span>
+                              </button>
+                              <div class="faq-answer">
+                                Simply fill out the registration form and upload your profile information.
+                              </div>
+                            </div>
+                          
+                            <div class="faq-item">
+                              <button class="faq-question">
+                                Is there a certificate after completion?
+                                <span class="icon">+</span>
+                              </button>
+                              <div class="faq-answer">
+                                Yes, we provide an accredited digital certificate upon successful course completion.
+                              </div>
+                            </div>
+                          </section>
+                          
               
                     
            
@@ -220,26 +268,41 @@
 
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function () {
     const themeSelector = document.getElementById("theme-selector");
-    const currentTheme = localStorage.getItem("theme") || "light";
 
-    // Apply the saved theme
+    // Detect OS theme preference if not saved
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const savedTheme = localStorage.getItem("theme");
+    const currentTheme = savedTheme || (prefersDarkScheme ? "dark" : "light");
+
+    // Apply theme on load
     document.body.classList.toggle("dark-mode", currentTheme === "dark");
-    themeSelector.value = currentTheme;
 
-    // Change theme on selection
-    themeSelector.addEventListener("change", function () {
-        if (this.value === "dark") {
-            document.body.classList.add("dark-mode");
-            localStorage.setItem("theme", "dark");
-        } else {
-            document.body.classList.remove("dark-mode");
-            localStorage.setItem("theme", "light");
-        }
-    });
+    // If themeSelector exists, update its value
+    if (themeSelector) {
+        themeSelector.value = currentTheme;
+        themeSelector.addEventListener("change", function () {
+            const isDark = this.value === "dark";
+            document.body.classList.toggle("dark-mode", isDark);
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+        });
+    }
 });
 
+const toggleBtn = document.getElementById("theme-toggle");
+
+if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+        const isDark = document.body.classList.toggle("dark-mode");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+        toggleBtn.textContent = isDark ? "☀️" : "🌙";
+    });
+
+    // Set icon on load
+    const theme = localStorage.getItem("theme") || (prefersDarkScheme ? "dark" : "light");
+    toggleBtn.textContent = theme === "dark" ? "☀️" : "🌙";
+}
 
 const menuIcon = document.getElementById('menuicon');
 const menuList = document.getElementById('menulist');
@@ -254,5 +317,58 @@ menuIcon.addEventListener("click", () => {
             // menuList.classList.toggle("");
         }
     });
+
+
+    function updateClock() {
+  const now = new Date();
+
+  const hour = now.getHours();
+  const min = now.getMinutes();
+  const sec = now.getSeconds();
+
+  // Digital
+  const digital = document.getElementById('digital-clock');
+  digital.textContent = `${String(hour).padStart(2, '0')}:${String(min).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
+
+  // Analog
+  const hourDeg = ((hour % 12) + min / 60) * 30;
+  const minDeg = min * 6;
+  const secDeg = sec * 6;
+
+  document.getElementById('hour-hand').style.transform = `translateX(-50%) rotate(${hourDeg}deg)`;
+  document.getElementById('minute-hand').style.transform = `translateX(-50%) rotate(${minDeg}deg)`;
+  document.getElementById('second-hand').style.transform = `translateX(-50%) rotate(${secDeg}deg)`;
+}
+
+// Run every second
+setInterval(updateClock, 1000);
+updateClock(); // Run immediately
+
+
+
+
+
+// FAQ toggle logic
+const faqButtons = document.querySelectorAll(".faq-question");
+
+faqButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const isActive = btn.classList.contains("active");
+
+    // Close all
+    faqButtons.forEach((b) => {
+      b.classList.remove("active");
+      b.nextElementSibling.style.maxHeight = null;
+    });
+
+    // Open clicked one
+    if (!isActive) {
+      btn.classList.add("active");
+      const answer = btn.nextElementSibling;
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  });
+});
+
 
 </script>

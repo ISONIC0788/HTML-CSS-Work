@@ -123,3 +123,22 @@ a:hover {
         padding: 10px;
     }
 }
+
+
+#strength-meter {
+    font-weight: bold;
+    color: #000;
+  }
+  .dark-mode #strength-meter {
+    color: #fff;
+  }
+  .weak {
+    color: red;
+  }
+  .medium {
+    color: orange;
+  }
+  .strong {
+    color: green;
+  }
+  

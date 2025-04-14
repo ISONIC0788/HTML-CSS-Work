@@ -112,3 +112,54 @@ ul li {
         font-size: 0.9rem;
     }
 }
+
+.faq-section {
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .faq-item {
+    border-bottom: 1px solid var(--border-color, #ccc);
+    margin-bottom: 10px;
+  }
+  
+  .faq-question {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 1.2rem;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--primary-color);
+  }
+  
+  .faq-question .icon {
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .faq-question.active .icon {
+    transform: rotate(45deg); /* change + to x */
+  }
+  
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    font-size: 1rem;
+    color: var(--text-color);
+    padding-left: 10px;
+  }
+  
+  .faq-question.active + .faq-answer {
+    max-height: 200px;
+    margin-bottom: 10px;
+  }
+  

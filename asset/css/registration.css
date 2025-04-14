@@ -95,3 +95,18 @@ button:hover {
         font-size: 14px;
     }
 }
+
+
+#strength-meter {
+    font-weight: bold;
+  }
+  .weak {
+    color: red;
+  }
+  .medium {
+    color: orange;
+  }
+  .strong {
+    color: green;
+  }
+  
