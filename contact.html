@@ -121,12 +121,16 @@
                         <section class="circle-clock text-center my-5">
                             <h2 class="mb-4">Real-Time Clock</h2>
                           
-                            <div class="clock-face">
-                              <div class="center-point"></div>
-                              <div class="hand hour" id="hour-hand"></div>
-                              <div class="hand minute" id="minute-hand"></div>
-                              <div class="hand second" id="second-hand"></div>
-                            </div>
+                            <section class="analog-clock-section text-center my-5">
+                            
+                                <div class="analog-clock">
+                                  <div class="clock-center"></div>
+                                  <div class="hand hour-hand" id="hour-hand"></div>
+                                  <div class="hand minute-hand" id="minute-hand"></div>
+                                  <div class="hand second-hand" id="second-hand"></div>
+                                </div>
+                              </section>
+                              
                           
                             <div class="digital-time mt-4" id="digital-clock"></div>
                           </section>
@@ -309,13 +313,62 @@ updateClock(); // Run immediately
 
 
 
+// const form = document.getElementById("contact-form");
+// const emailInput = document.getElementById("email");
+// const passwordInput = document.getElementById("password");
+// const submitBtn = document.getElementById("submit-btn");
+// const strengthMeter = document.getElementById("strength-meter");
+// const emailError = document.getElementById("email-error");
+
+// function validateEmail() {
+//   const email = emailInput.value.trim();
+//   const valid = email.endsWith("@techinnovators.com");
+//   emailError.classList.toggle("d-none", valid);
+//   return valid;
+// }
+
+// function validatePassword() {
+//   const password = passwordInput.value;
+//   const lengthValid = password.length >= 8;
+//   const hasNumber = /\d/.test(password);
+//   const hasSpecial = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+//   let strength = "weak";
+//   if (lengthValid && hasSpecial) strength = "medium";
+//   if (lengthValid && hasNumber && hasSpecial && password.length >= 12)
+//     strength = "strong";
+
+//   strengthMeter.textContent = `Strength: ${strength}`;
+//   strengthMeter.className = strength;
+
+//   return lengthValid && hasNumber && hasSpecial;
+// }
+
+// function checkFormValidity() {
+//   const emailValid = validateEmail();
+//   const passwordValid = validatePassword();
+//   submitBtn.disabled = !(emailValid && passwordValid);
+// }
+
+// // Attach listeners
+// emailInput.addEventListener("input", checkFormValidity);
+// passwordInput.addEventListener("input", checkFormValidity);
+
+// // Optional: prevent default form submission for now
+// form.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   alert("Form submitted successfully!");
+// });
 const form = document.getElementById("contact-form");
+const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
+const messageInput = document.getElementById("message");
 const submitBtn = document.getElementById("submit-btn");
 const strengthMeter = document.getElementById("strength-meter");
 const emailError = document.getElementById("email-error");
 
+// Email validation (must end with @techinnovators.com)
 function validateEmail() {
   const email = emailInput.value.trim();
   const valid = email.endsWith("@techinnovators.com");
@@ -323,6 +376,7 @@ function validateEmail() {
   return valid;
 }
 
+// Password strength checker
 function validatePassword() {
   const password = passwordInput.value;
   const lengthValid = password.length >= 8;
@@ -335,26 +389,34 @@ function validatePassword() {
     strength = "strong";
 
   strengthMeter.textContent = `Strength: ${strength}`;
-  strengthMeter.className = strength;
+  strengthMeter.className = `strength-${strength}`;
 
   return lengthValid && hasNumber && hasSpecial;
 }
 
+// Full form validation
 function checkFormValidity() {
-  const emailValid = validateEmail();
-  const passwordValid = validatePassword();
-  submitBtn.disabled = !(emailValid && passwordValid);
+  const isNameValid = nameInput.value.trim().length > 0;
+  const isEmailValid = validateEmail();
+  const isPasswordValid = validatePassword();
+  const isMessageValid = messageInput.value.trim().length > 0;
+
+  const isFormValid = isNameValid && isEmailValid && isPasswordValid && isMessageValid;
+  submitBtn.disabled = !isFormValid;
 }
 
-// Attach listeners
-emailInput.addEventListener("input", checkFormValidity);
-passwordInput.addEventListener("input", checkFormValidity);
+// Attach input listeners to all fields
+[nameInput, emailInput, passwordInput, messageInput].forEach(input => {
+  input.addEventListener("input", checkFormValidity);
+});
 
-// Optional: prevent default form submission for now
-form.addEventListener("submit", (e) => {
+// Optional form submission
+form.addEventListener("submit", function (e) {
   e.preventDefault();
   alert("Form submitted successfully!");
 });
+
+
 
 
 </script>
